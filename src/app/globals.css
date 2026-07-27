@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Pretendard", "SF Pro Display", system-ui, sans-serif;
+  --font-body: "Pretendard", "Inter", system-ui, sans-serif;
+  --font-kr: "Pretendard", "Noto Sans KR", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-graphite font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+  ::selection {
+    @apply bg-aurora-indigo/20;
+  }
+  :focus-visible {
+    outline: 2px solid theme("colors.aurora.indigo");
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-aurora-text bg-clip-text text-transparent;
+  }
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/60 shadow-soft;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold text-white
+      bg-gradient-to-r from-aurora-blue to-aurora-indigo shadow-glow
+      transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold
+      bg-mist text-graphite border border-line
+      transition-colors duration-200 hover:bg-line;
+  }
+  .card-surface {
+    @apply rounded-xl3 bg-white border border-line shadow-soft;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
