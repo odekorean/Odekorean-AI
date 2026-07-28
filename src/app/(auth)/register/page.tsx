@@ -54,7 +54,7 @@ export default function RegisterPage() {
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               className="mt-1 w-full rounded-xl border border-line px-4 py-3 outline-none focus:border-aurora-indigo"
-              placeholder="Dilnoza Sobirova"
+              placeholder="Dilnoza"
             />
           </div>
           <div>
